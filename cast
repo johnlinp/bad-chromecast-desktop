@@ -1,0 +1,33 @@
+#!/bin/bash
+
+function activate {
+    xdotool search --onlyvisible --classname $1 windowactivate
+}
+
+function key {
+    xdotool key $1
+    sleep 1
+}
+
+if ! activate google-chrome
+then
+    echo 'google-chrome not found, exit'
+    exit
+fi
+
+key alt+f
+key c
+
+key Tab
+key Return
+key Tab
+key Tab
+key Down
+key Return
+key Tab
+key Return
+
+key Tab
+key Right
+key Return
+key Escape
